@@ -3,7 +3,7 @@ import fastify from "fastify";
 const app = fastify();
 
 app.get("/", (req, res) => {
-  res.send("Hello web! Version 0.1!");
+  res.send("Hello web! Version 0.1! Hi!");
 });
 
 app.listen(
