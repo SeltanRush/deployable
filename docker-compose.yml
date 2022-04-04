@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  backend:
+    image: deployable-backend
+    container_name: backend
+    restart: "always"
+    environment:
+      PORT: 3002
+      HOST: backend
+    ports:
+      - "3002:3002"
