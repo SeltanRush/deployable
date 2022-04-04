@@ -1,0 +1,15 @@
+{
+  "name": "deployable",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "ts-node main.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.27.4",
+    "ts-node": "^10.7.0"
+  }
+}
