@@ -5,7 +5,7 @@ services:
     container_name: backend
     restart: "always"
     environment:
-      PORT: 3002
+      PORT: 8080
       HOST: backend
     ports:
-      - "3002:3002"
+      - "80:8080"
