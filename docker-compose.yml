@@ -4,10 +4,8 @@ services:
     image: postgres
     container_name: db
     restart: "always"
-    environment:
-      POSTGRES_PASSWORD: pgpassword
-      POSTGRES_USER: pguser
-      POSTGRES_DB: pgdb
+    env_file:
+      - db.env
     volumes:
       - "~/pgdata:/var/lib/postgresql/volume"
     ports:
@@ -19,9 +17,7 @@ services:
       - db
     container_name: backend
     restart: "always"
-    environment:
-      PORT: 8080
-      HOST: backend
-      DATABASE_URL: postgresql://pguser:pgpassword@db:5432/pgdb?schema=public
+    env_file:
+      - backend.env
     ports:
       - "80:8080"
