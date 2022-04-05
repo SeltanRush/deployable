@@ -1,7 +1,21 @@
 version: "3.7"
 services:
+  db:
+    image: postgres
+    container_name: postgres
+    restart: "always"
+    environment:
+      POSTGRES_PASSWORD: pgpassword
+      POSTGRES_USER: pguser
+      POSTGRES_DB: pgdb
+    volumes:
+      - "~/pgdata:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
   backend:
     image: deployable-backend
+    depends_on:
+      - db
     container_name: backend
     restart: "always"
     environment:
