@@ -15,3 +15,10 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: cd ${{ secrets.PROJECT_PATH }} && git pull && sh deploy.sh
+          script: |
+            cd ${{ secrets.PROJECT_PATH }}
+            git pull
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm install default
+            sh deploy.sh
