@@ -2,16 +2,17 @@ version: "3.7"
 services:
   db:
     image: postgres
-    container_name: postgres
+    container_name: db
     restart: "always"
     environment:
       POSTGRES_PASSWORD: pgpassword
       POSTGRES_USER: pguser
       POSTGRES_DB: pgdb
     volumes:
-      - "~/pgdata:/var/lib/postgresql/data"
+      - "~/pgdata:/var/lib/postgresql/volume"
     ports:
       - "5432:5432"
+
   backend:
     image: deployable-backend
     depends_on:
@@ -21,5 +22,6 @@ services:
     environment:
       PORT: 8080
       HOST: backend
+      DATABASE_URL: postgresql://pguser:pgpassword@db:5432/pgdb?schema=public
     ports:
       - "80:8080"
