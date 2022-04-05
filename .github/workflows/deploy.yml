@@ -14,7 +14,6 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          script: cd ${{ secrets.PROJECT_PATH }} && git pull && sh deploy.sh
           script: |
             cd ${{ secrets.PROJECT_PATH }}
             git pull
