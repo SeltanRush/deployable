@@ -5,7 +5,7 @@ services:
     container_name: db
     restart: "always"
     env_file:
-      - db.env
+      - env/db.env
     volumes:
       - "~/deployable_db:/var/lib/postgresql/data"
     ports:
@@ -18,6 +18,6 @@ services:
     container_name: backend
     restart: "always"
     env_file:
-      - backend.env
+      - env/backend.env
     ports:
       - "80:8080"
