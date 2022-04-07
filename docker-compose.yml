@@ -17,7 +17,18 @@ services:
       - db
     container_name: backend
     restart: "always"
+    build:
+      context: ./backend
     env_file:
       - env/backend.env
+    environment:
+      PORT: 4000
     ports:
-      - "80:8080"
+      - "4000:4000"
+
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"

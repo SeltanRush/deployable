@@ -3,6 +3,5 @@ set -e
 
 echo "Deploying application ..."
 
-cd backend && sh build.sh
-docker-compose down && docker-compose up -d
-npx prisma migrate deploy
+docker-compose down && docker-compose up --build -d
+cd backend && npx prisma migrate deploy
