@@ -32,3 +32,5 @@ services:
       context: ./nginx
     ports:
       - "80:80"
+    volumes:
+      - "./frontend:/container/frontend"
