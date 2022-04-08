@@ -2,3 +2,4 @@
 *.env
 deployable_db
 deployable_frontend
+*.DS_Store
