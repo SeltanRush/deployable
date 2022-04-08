@@ -12,7 +12,6 @@ services:
       - "5432:5432"
 
   backend:
-    image: deployable-backend
     depends_on:
       - db
     container_name: backend
@@ -26,11 +25,19 @@ services:
     ports:
       - "4000:4000"
 
+  frontend:
+    container_name: frontend
+    restart: "always"
+    build:
+      context: ./frontend
+    environment:
+      PORT: 3000
+    ports:
+      - "3000:3000"
+
   nginx:
     restart: always
     build:
       context: ./nginx
     ports:
       - "80:80"
-    volumes:
-      - "./frontend:/container/frontend"
