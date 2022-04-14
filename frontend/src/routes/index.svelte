@@ -1,3 +1,7 @@
+<script>
+	import { makePageTitle } from '$lib/makePageTitle';
+</script>
+
 <svelte:head>
-	<title>Deployable home</title>
+	<title>{makePageTitle('Home')}</title>
 </svelte:head>
