@@ -17,7 +17,9 @@ const AppLayout = (props: Props) => {
       </header>
 
       <main>
-        <Stack alignItems="center">{props.children}</Stack>
+        <Box sx={{ padding: 4 }}>
+          <Stack alignItems="center">{props.children}</Stack>
+        </Box>
       </main>
 
       <footer>

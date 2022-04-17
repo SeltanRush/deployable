@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 
+import CreateLabelForm from "components/domain/labels/CreateLabelForm/CreateLabelForm";
+
 import SEO from "../src/components/utils/SEO";
 
 const LabelsPage: NextPage = () => {
@@ -7,7 +9,7 @@ const LabelsPage: NextPage = () => {
     <div>
       <SEO title="Home" description="Deployable app home page" />
 
-      <h1>Labels page</h1>
+      <CreateLabelForm />
     </div>
   );
 };

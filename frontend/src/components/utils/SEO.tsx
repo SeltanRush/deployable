@@ -8,7 +8,7 @@ interface Props {
 export default function SEO(props: Props) {
   return (
     <Head>
-      <title>Deployable | {props.title}</title>
+      <title>{`Deployable | ${props.title}`}</title>
       <meta name="description" content={props.description} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
