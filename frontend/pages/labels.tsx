@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { useQuery } from "react-query";
 import axios from "axios";
+import { Stack } from "@mui/material";
 
 import CreateLabelForm from "components/domain/labels/CreateLabelForm/CreateLabelForm";
 import LabelsList from "components/domain/labels/LabelsList/LabelsList";
@@ -17,9 +18,11 @@ const LabelsPage: NextPage = () => {
     <div>
       <SEO title="Home" description="Deployable app home page" />
 
-      <CreateLabelForm />
+      <Stack spacing={2}>
+        <CreateLabelForm />
 
-      {isSuccess ? <LabelsList labels={data.data} /> : null}
+        {isSuccess ? <LabelsList labels={data.data} /> : null}
+      </Stack>
     </div>
   );
 };
