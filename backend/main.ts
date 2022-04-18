@@ -9,7 +9,9 @@ app.get("/api", (req, res) => {
 });
 
 app.get("/api/labels", async (req, res) => {
-  const labels = await prisma.label.findMany();
+  const labels = await prisma.label.findMany({
+    orderBy: { createdAt: "desc" },
+  });
   res.send(labels);
 });
 
@@ -50,11 +52,11 @@ app.put<{
 
 app.delete<{
   Params: {
-    labelId: number;
+    labelId: string;
   };
 }>("/api/labels/:labelId/delete", async (req, res) => {
   const label = await prisma.label.findUnique({
-    where: { id: req.params.labelId },
+    where: { id: Number(req.params.labelId) },
   });
 
   if (label) {
