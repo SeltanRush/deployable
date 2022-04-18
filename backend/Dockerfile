@@ -3,7 +3,7 @@ FROM node:16
 WORKDIR /usr/src/app
 
 COPY . .
-RUN npm install
+RUN yarn
 
 EXPOSE $PORT
-CMD ["npm", "start"]
+CMD ["yarn", "start"]

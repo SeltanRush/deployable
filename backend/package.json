@@ -1,5 +1,5 @@
 {
-  "name": "deployable",
+  "name": "deployable-backend",
   "version": "1.0.0",
   "description": "",
   "main": "main.ts",
@@ -14,5 +14,8 @@
     "prisma": "^3.12.0",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.24"
   }
 }

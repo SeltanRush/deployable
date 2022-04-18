@@ -1,39 +1,35 @@
 {
-  "name": "frontend",
-  "version": "0.0.1",
+  "name": "deployable-frontend",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
-    "prepare": "svelte-kit sync",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+    "dev": "cross-env PORT=3001 next dev",
+    "build": "next build",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.7.1",
+    "@emotion/react": "^11.9.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/roboto": "^4.5.5",
+    "@mui/material": "^5.6.1",
+    "axios": "^0.26.1",
+    "next": "12.1.5",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-hook-form": "^7.30.0",
+    "react-query": "^3.35.0",
+    "react-toastify": "^8.2.0"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "next",
-    "@sveltejs/adapter-node": "^1.0.0-next.73",
-    "@sveltejs/kit": "next",
-    "@types/cookie": "^0.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-svelte3": "^3.2.1",
-    "prettier": "^2.5.1",
-    "prettier-plugin-svelte": "^2.5.0",
-    "svelte": "^3.46.0",
-    "svelte-check": "^2.2.6",
-    "svelte-preprocess": "^4.10.1",
-    "tslib": "^2.3.1",
-    "typescript": "~4.6.2"
-  },
-  "type": "module",
-  "dependencies": {
-    "@fontsource/fira-mono": "^4.5.0",
-    "@lukeed/uuid": "^2.0.0",
-    "cookie": "^0.4.1"
+    "@types/node": "17.0.24",
+    "@types/react": "18.0.5",
+    "@types/react-dom": "18.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "cross-env": "^7.0.3",
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5",
+    "typescript": "4.6.3"
   }
 }
