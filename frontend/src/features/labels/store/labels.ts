@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useMutation, useQuery, useQueryClient } from "react-query";
-import { toast } from "react-toastify";
 
 import { Label } from "features/labels/model/Label";
+import { toastError, toastSuccess } from "utils/toast";
 
 const LABELS_QUERY_KEY = "labels";
 
@@ -24,9 +24,7 @@ export const useCreateLabelMutation = (props: {
     {
       onSuccess: (_, variables) => {
         queryClient.invalidateQueries("labels");
-        toast("Label added", {
-          type: "success",
-        });
+        toastSuccess("Label added");
         props.onSuccess(variables);
       },
     }
@@ -42,6 +40,26 @@ export const useClickLabelMutation = () => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries("labels");
+      },
+      onError: () => {
+        toastError("Error when updating label");
+      },
+    }
+  );
+};
+
+export const useDeleteLabelMutation = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation(
+    (data: { labelId: string }) =>
+      axios.delete(`/api/labels/${data.labelId}/delete`),
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries("labels");
+      },
+      onError: () => {
+        toastError("Error when deleting label");
       },
     }
   );

@@ -2,7 +2,6 @@ import { Button, CircularProgress, Stack, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 
 import { useCreateLabelMutation } from "features/labels/store/labels";
-import "react-toastify/dist/ReactToastify.css";
 
 interface Form {
   name: string;

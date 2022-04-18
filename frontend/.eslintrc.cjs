@@ -21,6 +21,10 @@ module.exports = {
         "newlines-between": "always",
       },
     ],
-    "@typescript-eslint/no-unused-vars": ["warn", {}],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_", args: "all" },
+    ],
+    "no-unused-vars": ["off"],
   },
 };

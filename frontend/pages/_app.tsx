@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { AppProps } from "next/app";
 import { useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 
 import createEmotionCache from "utils/mui/createEmotionCache";
 import darkTheme from "utils/mui/themes/darkTheme";
